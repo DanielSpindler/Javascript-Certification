@@ -15,8 +15,15 @@
     name7 = "Judy" + seperator
     name8 = "Susan"
 
+    //kept the condition and now filtering just for having input
+    if (seperator.length > 0) {
         document.getElementById('out').innerHTML =
             name1 + name2 + name3 + name4 + name5 + name6 + name7 + name8
+    } else {
+        //reloading the site if condition not met
+        alert('We need a Seperator!')
+        window.location.reload()
+    }
 </script>
 </body>
 </html>
