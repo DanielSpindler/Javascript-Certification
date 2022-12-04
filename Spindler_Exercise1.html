@@ -14,16 +14,16 @@
     var adj = prompt("Enter an adjective");
     var adj2 = prompt("Enter another adjective");
     var adj3 = prompt("Enter one more adjective")
-    var out = "Roses are Red. Violets are blue. "
+    var out = "Roses are Red. Violets are blue. <br/>"
 
-    out += properNameOne + " left town without wearing a shoe. ";
-    out += properNameTwo + " also left the town "
-    out += properNameOne + verb;
-    out += " And " + properNameOne + verb2;
-    out += " And " + properNameTwo + verb3;
-    out += " But I am " + adj + properNameOne + "thought. ";
-    out += "But I am " + adj3 + properNameTwo + "thought. ";
-    out += "And kind of " + adj2 + " too!";
+    out += properNameOne + " left town without wearing a shoe.<br/>";
+    out += properNameTwo + " also left the town, but he did wear a shoe.<br/>"
+    out += properNameOne + ' ' + verb;
+    out += " and " + properNameOne + ' ' + verb2;
+    out += " and also " + properNameTwo + ' ' + verb3+'.<br/>';
+    out += " But I am " + adj + ' ' + properNameOne + " thought.<br/> ";
+    out += "But I am also " + adj2 + ' ' + properNameTwo + " thought. <br/>";
+    out += "And kind of " + adj3 + " too!";
     document.getElementById("output").innerHTML = out;
 </script>
 </body>
