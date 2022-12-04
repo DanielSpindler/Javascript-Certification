@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang>
+<head>
+    <title>#Lab 14</title>
+</head>
+<body>
+<h3>Bus</h3>
+<div>
+    <input type="number" id="accelerateBus">
+    <button onclick={bus.accelerate(document.getElementById('accelerateBus').value)}>Accelerate!</button>
+    <br/>
+    <input type="number" id="degreeBus">
+    <button onclick={bus.turnLeft(document.getElementById('degreeBus').value)}>Turn Left!</button>
+    <button onclick={bus.turnRight(document.getElementById('degreeBus').value)}>Turn Right!!</button>
+    <br/>
+    <button onclick={bus.turnOn()}>ON!</button>
+    <button onclick={bus.brake()}>Brake!</button>
+    <button onclick={bus.turnOff()}>OFF!</button>
+</div>
+<h3>Ambulance</h3>
+<div>
+    <input type="number" id="accelerateAmbulance">
+    <button onclick={ambulance.accelerate(document.getElementById('accelerateAmbulance').value)}>Accelerate!</button>
+    <br/>
+    <input type="number" id="degreeAmbulance">
+    <button onclick={ambulance.turnLeft(document.getElementById('degreeAmbulance').value)}>Turn Left!</button>
+    <button onclick={ambulance.turnRight(document.getElementById('degreeAmbulance').value)}>Turn Right!!</button>
+    <br/>
+    <button onclick={ambulance.turnOn()}>ON!</button>
+    <button onclick={ambulance.brake()}>Brake!</button>
+    <button onclick={ambulance.turnOff()}>OFF!</button>
+    <br/>
+    <button onclick={ambulance.sirenOn()}>Siren ON!</button>
+    <button onclick={ambulance.sirenOff()}>Siren OFF!</button>
+</div>
+<script src="Vehicle.js"></script>
+<script>
+    //color,direction,currentSpeed,topSpeed,engineStarted
+    const bus = new Bus('Red', 180, 0, 100, false, 55)
+    const ambulance = new Ambulance('blue', 180, 0, 200, false)
+
+</script>
+</body>
+<style>
+    body {
+        width: 50%;
+    }
+
+    body div {
+        height: 8rem;
+        border: 2px solid black;
+    }
+</style>
+
+</html>

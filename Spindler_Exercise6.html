@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab #6</title></head>
+<body>
+<div id="out"></div>
+<div id="avg"></div>
+<div id="highLow"></div>
+<div id="outstanding"></div>
+<script>
+    var out = ""
+    var names = [];
+    var theName = "";
+
+    while (theName != "XXX") {
+        theName = prompt("Enter a name or XXX to Stop");
+        if (theName != "XXX") {
+            names.push(parseFloat(theName));
+        }
+    }
+    var avg = 0
+    names.sort(function (a, b) {
+        return b - a;
+    });
+
+    for (var x = 0; x < names.length; x++) {
+        out += names[x]
+        out += '<br/>'
+        avg += names[x]
+    }
+
+    avg = avg / names.length
+    var outstanding = ""
+    for (x = 0; x < names.length; x++) {
+        if (names[x] > 3.4) {
+            outstanding += names[x]
+            outstanding += '<br/>'
+        }
+    }
+
+    document.getElementById('out').innerHTML = out;
+    document.getElementById('avg').innerHTML = 'Avg:' + avg;
+    document.getElementById('highLow').innerHTML = 'highest:' + names[0] + ' lowest:' + names[names.length - 1];
+    document.getElementById('outstanding').innerHTML = outstanding;
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab #7</title></head>
+<body>
+<script src="Player.js"></script>
+<script>
+
+    var player = new Player(prompt("Enter Playername"));
+    var input = 0
+
+    while (input !== '') {
+        input = prompt(
+            "1 move Left" + '\n' +
+            "2 move Right" + '\n' +
+            "3 move Up" + '\n' +
+            "4 move Down" + '\n' +
+            "current" + player.gridLocationX +' '+ player.gridLocationY
+        );
+
+        switch (input) {
+            case "1":
+                player.moveLeft();
+                break;
+            case "2":
+                player.moveRight();
+                break;
+            case "3":
+                player.moveUp();
+                break;
+            case "4":
+                player.moveDown();
+                break;
+        }
+    }
+
+</script>
+</body>
+</html>

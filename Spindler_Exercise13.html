@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab #13</title>
+</head>
+<body>
+<h3>Employee's</h3>
+<div id="all">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Birthday
+            </th>
+            <th>
+                Languages
+            </th>
+        </tr>
+        </thead>
+        <tbody id="table">
+
+        </tbody>
+    </table>
+</div>
+
+<script>
+    var userList = {
+        "people": [
+            {
+                firstName: "Fred", lastName: "Smith", dateOfBirth: 1980, spokenLanguages: {
+                    native: "English",
+                    fluent: "Spanish", intermediate: "Chinese"
+                }
+            },
+            {
+                firstName: "Monica",
+                lastName: "Taylor", dateOfBirth: 1975, spokenLanguages: {
+                    native: "Spanish", fluent: "English", intermediate: "French"
+                }
+            },
+            {
+                firstName: "Maurice",
+                lastName: "Edelson", dateOfBirth: 1992, spokenLanguages: {
+                    native: "English", fluent: "Spanish",
+                }
+            },
+            {
+                firstName: "Kelly",
+                lastName: "Lang", dateOfBirth: 1982, spokenLanguages: {
+                    native: "English", fluent: "German", intermediate: "Dutch"
+                }
+            }]
+    };
+
+    let table = document.getElementById('table')
+
+    userList.people.forEach(worker => {
+        let {firstName, lastName, dateOfBirth, spokenLanguages} = worker
+        let {native, fluent, intermediate} = spokenLanguages
+
+        let tr = document.createElement('tr')
+        let tdName = document.createElement('td')
+        let tdBirth = document.createElement('td')
+        let tdLang = document.createElement('td')
+        tdName.innerText = firstName + ' ' + lastName
+        tdBirth.innerText = dateOfBirth
+        tdLang.innerText = `${native} ${fluent} ${intermediate}`
+
+        tr.append(tdName)
+        tr.append(tdBirth)
+        tr.append(tdLang)
+        table.append(tr)
+    })
+
+</script>
+</body>
+<style>
+    .table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .table td, .table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .table tr:nth-child(even){background-color: #f2f2f2;}
+
+    .table tr:hover {background-color: #ddd;}
+
+    .table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: darkgreen;
+        color: white;
+    }
+</style>
+</html>

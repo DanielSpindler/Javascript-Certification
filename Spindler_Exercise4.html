@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab #4</title></head>
+<body>
+<div id="out"></div>
+<script>
+    var num1 = parseInt(prompt('First Number'))
+    var num2 = parseInt(prompt('Second Number'))
+    var op = prompt('Operator +,-,*,/,%')
+
+    switch (op) {
+        case '+':
+            document.getElementById('out').innerHTML = num1 + '+' + num2 + '=' + num1 + num2
+            break;
+        case '-':
+            document.getElementById('out').innerHTML = num1 + '-' + num2 + '=' + num1 - num2
+            break;
+        case'*':
+            document.getElementById('out').innerHTML = num1 + '*' + num2 + '=' + num1 * num2
+            break;
+        case'/':
+            document.getElementById('out').innerHTML = num1 + '/' + num2 + '=' + num1 / num2
+            break;
+        case '%':
+            document.getElementById('out').innerHTML = num1 + '%' + num2 + '=' + num1 % num2
+            break;
+        default:
+            alert('no operation')
+    }
+
+</script>
+</body>
+</html>

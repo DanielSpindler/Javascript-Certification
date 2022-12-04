@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab #5A</title></head>
+<body>
+<div id="out"></div>
+<div id="out2"></div>
+<script>
+    var out = ''
+    var out2 = ''
+    for (var i = 0; i <= 10; i++) {
+        for (var x = 0; x < i + 1; x++) {
+            out += '*';
+        }
+        out += '<br/>';
+    }
+
+    for (i; i > 0; i--) {
+        for (x = 0; x < i - 1; x++) {
+            out += '*';
+        }
+        out += '<br/>';
+    }
+
+    for (i = 0; i < 4; i++) {
+        for (x = 1; x <= 12; x++) {
+            if (x % 2)
+                out2 += '*';
+            else {
+                out2 += '_';
+            }
+        }
+        out2 += '<br/>';
+    }
+
+    document.getElementById('out').innerHTML = out;
+    document.getElementById('out2').innerHTML = out2;
+</script>
+</body>
+</html>

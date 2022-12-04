@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab #5B</title></head>
+<body>
+<div id="out"></div>
+<script>
+    var out = ''
+    var col = parseInt(prompt('enter column'))
+    var row = parseInt(prompt('enter row'))
+
+    for (var i = 0; i < col; i++) {
+        for (var x = 0; x < row; x++) {
+            out += '*';
+        }
+        out += '<br/>';
+    }
+    document.getElementById('out').innerHTML = out;
+
+</script>
+</body>
+</html>

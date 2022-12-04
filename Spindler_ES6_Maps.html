@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab #10</title>
+</head>
+<body>
+<div id="all"></div>
+<button onclick={listAll()}>all</button>
+<script>
+    let inputCamper = prompt("enter camper")
+    let inputTask = prompt("enter task")
+    let taskMap = new Map()
+
+    const listAll = () => {
+        taskMap.forEach((key, task) => {
+            document.getElementById('all').innerHTML += '<p>' + 'Camper: ' + key + ' ' + 'Task: '+task + '<p/>'
+        })
+    }
+
+    switch (inputTask) {
+        case "Front Room Sweep":
+            taskMap.set(inputTask, inputCamper)
+            break;
+        case "Back Room Sweep":
+            taskMap.set(inputTask, inputCamper)
+            break;
+        case "Outside Grounds":
+            taskMap.set(inputTask, inputCamper)
+            break;
+        case "Clean Toilet":
+            taskMap.set(inputTask, inputCamper)
+            break;
+        case "Clean Sink":
+            taskMap.set(inputTask, inputCamper)
+            break;
+        case "Trash Patrol":
+            taskMap.set(inputTask, inputCamper)
+            break;
+        default:
+            alert("wrong task")
+    }
+</script>
+</body>
+</html>

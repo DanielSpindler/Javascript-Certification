@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang>
+<head>
+    <title>#Lab Final</title>
+</head>
+<body>
+
+<form onsubmit={getRandomImage(event)}>
+    <label> Width
+        <input type="number" id="widthImage">
+    </label>
+    <label>Height
+        <input type="number" id="heightImage">
+    </label>
+    <input type="checkbox" id="grayscale">
+    <input type="submit">
+</form>
+<div id="image-holder"></div>
+<script>
+    const getRandomImage = (event) => {
+        let width = event.target[0].value
+        let height = event.target[1].value
+        let url = `https://picsum.photos/${width}/${height}/?random`
+
+        if (document.getElementById('grayscale').checked) {
+            url = `https://picsum.photos/${width}/${height}/?grayscale`
+        }
+        let img = null
+        let imgPromise = new Promise(function (resolve, reject) {
+            img = new Image()
+            img.addEventListener('load', resolve(img))
+            img.addEventListener('error', reject('Could not load image'))
+            img.src = url
+        })
+
+        imgPromise.then(function (fromResolve) {
+            console.log('loaded')
+            let node = document.getElementById('image-holder')
+            node.appendChild(img)
+        }).catch(function (fromReject) {
+            console.log(fromReject)
+        })
+        event.preventDefault()
+    }
+</script>
+</body>
+<style>
+</style>
+
+</html>

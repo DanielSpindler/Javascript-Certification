@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab #9</title>
+</head>
+<body>
+<div id="todo"></div>
+<script>
+    let toDoList = ['todo1', 'todo2', 'todo3', 'todo4', 'todo5']
+    const todo = () => {
+        document.getElementById('todo').innerHTML = '<h1>' + "TO-DO:" + '</h1>'
+    }
+
+    const addTodo = () => {
+        todo();
+        for (let i = 0; i < toDoList.length; i++) {
+            document.getElementById('todo').innerHTML += '<p>' + toDoList[i] + '</p>'
+        }
+    }
+    addTodo();
+</script>
+</body>
+</html>
