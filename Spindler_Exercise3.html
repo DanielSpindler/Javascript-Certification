@@ -9,12 +9,12 @@
     var operand2 = parseInt(prompt("Operand2"))
 
     if (operand1 && operand2) {
-        document.writeln(operand1 + operand2)
-        document.writeln(operand1 - operand2)
-        document.writeln(operand1 * operand2)
-        document.writeln(operand1 == operand2) //equal not identical(===)
-        document.writeln(operand1 < operand2)
-        document.writeln(operand1 % operand2)
+        document.writeln('<label> Plus: ' + (operand1 + operand2) + '</label><br/>')
+        document.writeln('<label> Minus: ' + (operand1 - operand2) + '</label><br/>')
+        document.writeln('<label> Multiply: ' + (operand1 * operand2) + '</label><br/>')
+        document.writeln('<label> Equal: '+(operand1 == operand2)+'</label><br/>') //equal not identical(===)
+        document.writeln('<label> Op1 less than Op2: '+(operand1 < operand2)+'</label><br/>')
+        document.writeln('<label> Modulus: '+(operand1 % operand2)+'<label/><br/>')
     }
 </script>
 </body>
