@@ -5,34 +5,36 @@
 <body>
 <div id="out"></div>
 <script>
-    let NUM1 = parseInt(prompt('First Number'))
-    let NUM2 = parseInt(prompt('Second Number'))
+    let num1 = parseInt(prompt('First number'))
+    let num2 = parseInt(prompt('Second number'))
     const OP = prompt('Operator +,-,*,/,%')
+    let result
 
-    const showResult = (result) => {
+    const showResult = (num1, num2, OP) => {
+        switch (OP) {
+            case '+':
+                result = num1 + OP + num2 + '=' + (num1 + num2)
+                break;
+            case '-':
+                result = num1 + OP + num2 + '=' + (num1 - num2)
+                break;
+            case'*':
+                result = num1 + OP + num2 + '=' + (num1 * num2)
+                break;
+            case'/':
+                result = num1 + OP + num2 + '=' + (num1 / num2)
+                break;
+            case '%':
+                result = num1 + OP + num2 + '=' + (num1 % num2)
+                break;
+            default:
+                alert(OP + 'is no valid operation')
+        }
         document.getElementById('out').innerHTML = result
     }
 
-
-    console.log(NUM1)
-    switch (OP) {
-        case '+':
-            showResult(NUM1 + '+' + NUM2 + '=' + (NUM1 + NUM2))
-            break;
-        case '-':
-            showResult(NUM1 + '-' + NUM2 + '=' + (NUM1 - NUM2))
-            break;
-        case'*':
-            showResult(NUM1 + '*' + NUM2 + '=' + (NUM1 * NUM2))
-            break;
-        case'/':
-            showResult(NUM1 + '/' + NUM2 + '=' + (NUM1 / NUM2))
-            break;
-        case '%':
-            showResult(NUM1 + '%' + NUM2 + '=' + (NUM1 % NUM2))
-            break;
-        default:
-            alert('no operation')
+    if(OP){
+        showResult(num1,num2,OP)
     }
 
 </script>
