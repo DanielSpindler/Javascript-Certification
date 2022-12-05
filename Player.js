@@ -14,17 +14,35 @@ var Player = function (playername) {
 
     Player.prototype.moveLeft = () => {
         if (this.gridLocationX > 0) this.gridLocationX = this.gridLocationX - 1
+        else {
+            this.livesLeft = this.livesLeft - 1;
+            alert("you lost a life! you got " + this.livesLeft + ' lives left')
+        }
     }
 
     Player.prototype.moveRight = () => {
+
         if (this.gridLocationX < 9) this.gridLocationX = this.gridLocationX + 1
+        else {
+            this.livesLeft = this.livesLeft - 1;
+            alert("you lost a life! you got " + this.livesLeft + ' lives left')
+        }
     }
 
-     Player.prototype.moveUp = () => {
+    Player.prototype.moveUp = () => {
         if (this.gridLocationY > 0) this.gridLocationY = this.gridLocationY - 1
+        else {
+            this.livesLeft = this.livesLeft - 1;
+            alert("you lost a life! you got " + this.livesLeft + ' lives left')
+        }
     }
 
-     Player.prototype.moveDown = () => {
+    Player.prototype.moveDown = () => {
         if (this.gridLocationY < 9) this.gridLocationY = this.gridLocationY + 1
+        else {
+            this.livesLeft = this.livesLeft - 1;
+            alert("you lost a life! you got " + this.livesLeft + ' lives left')
+        }
     }
+
 }

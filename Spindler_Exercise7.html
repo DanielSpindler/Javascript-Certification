@@ -9,13 +9,13 @@
     var player = new Player(prompt("Enter Playername"));
     var input = 0
 
-    while (input !== '') {
+    while (input !== '' && player.livesLeft > 0) {
         input = prompt(
             "1 move Left" + '\n' +
             "2 move Right" + '\n' +
             "3 move Up" + '\n' +
             "4 move Down" + '\n' +
-            "current" + player.gridLocationX +' '+ player.gridLocationY
+            "current" + player.gridLocationX + ' ' + player.gridLocationY
         );
 
         switch (input) {
@@ -32,6 +32,9 @@
                 player.moveDown();
                 break;
         }
+    }
+    if (player.livesLeft <= 0) {
+        player.die()
     }
 
 </script>
