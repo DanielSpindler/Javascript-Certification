@@ -11,19 +11,19 @@
 
     switch (op) {
         case '+':
-            document.getElementById('out').innerHTML = num1 + '+' + num2 + '=' + num1 + num2
+            document.getElementById('out').innerHTML = num1 + '+' + num2 + '=' + (num1 + num2)
             break;
         case '-':
-            document.getElementById('out').innerHTML = num1 + '-' + num2 + '=' + num1 - num2
+            document.getElementById('out').innerHTML = num1 + '-' + num2 + '=' + (num1 - num2)
             break;
         case'*':
-            document.getElementById('out').innerHTML = num1 + '*' + num2 + '=' + num1 * num2
+            document.getElementById('out').innerHTML = num1 + '*' + num2 + '=' + (num1 * num2)
             break;
         case'/':
-            document.getElementById('out').innerHTML = num1 + '/' + num2 + '=' + num1 / num2
+            document.getElementById('out').innerHTML = num1 + '/' + num2 + '=' + (num1 / num2)
             break;
         case '%':
-            document.getElementById('out').innerHTML = num1 + '%' + num2 + '=' + num1 % num2
+            document.getElementById('out').innerHTML = num1 + '%' + num2 + '=' + (num1 % num2)
             break;
         default:
             alert('no operation')
