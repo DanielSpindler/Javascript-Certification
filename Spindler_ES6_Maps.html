@@ -4,41 +4,65 @@
     <title>Lab #10</title>
 </head>
 <body>
-<div id="all"></div>
-<button onclick={listAll()}>all</button>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map Exercise</title>
+</head>
+<body>
+<h1>Camp Whack-a-Doo Task's</h1>
 <script>
-    let inputCamper = prompt("enter camper")
-    let inputTask = prompt("enter task")
-    let taskMap = new Map()
+    const campers = new Map();
+    const camperNameInput = document.createElement('input');
+    const showButton = document.createElement('button');
 
-    const listAll = () => {
-        taskMap.forEach((key, task) => {
-            document.getElementById('all').innerHTML += '<p>' + 'Camper: ' + key + ' ' + 'Task: '+task + '<p/>'
-        })
-    }
 
-    switch (inputTask) {
-        case "Front Room Sweep":
-            taskMap.set(inputTask, inputCamper)
-            break;
-        case "Back Room Sweep":
-            taskMap.set(inputTask, inputCamper)
-            break;
-        case "Outside Grounds":
-            taskMap.set(inputTask, inputCamper)
-            break;
-        case "Clean Toilet":
-            taskMap.set(inputTask, inputCamper)
-            break;
-        case "Clean Sink":
-            taskMap.set(inputTask, inputCamper)
-            break;
-        case "Trash Patrol":
-            taskMap.set(inputTask, inputCamper)
-            break;
-        default:
-            alert("wrong task")
+    camperNameInput.placeholder = 'Camper name';
+    document.body.appendChild(camperNameInput);
+    camperNameInput.insertAdjacentHTML('afterend', '<br/>');
+
+    const taskSelect = document.createElement('select');
+
+    const taskOptions = [
+        'Front Room Sweep',
+        'Back Room Sweep',
+        'Outside Grounds Clean',
+        'Toilet Clean',
+        'Sink Clean',
+        'Trash Patrol and Supplies',
+    ];
+    for (const taskOption of taskOptions) {
+        const option = document.createElement('option');
+        option.textContent = taskOption;
+        taskSelect.appendChild(option);
     }
+    document.body.appendChild(taskSelect);
+    taskSelect.insertAdjacentHTML('afterend', '<br/>');
+
+    const addButton = document.createElement('button');
+    addButton.textContent = 'Add camper and task';
+    document.body.appendChild(addButton);
+
+    addButton.addEventListener('click', () => {
+        const camperName = camperNameInput.value;
+        const task = taskSelect.value;
+
+        if (camperName && task) {
+            campers.set(task, camperName);
+            camperNameInput.value = '';
+        }
+    });
+
+    showButton.textContent = 'Show campers and tasks';
+    document.body.appendChild(showButton);
+
+    showButton.addEventListener('click', () => {
+        for (const [task, camperName] of campers.entries()) {
+            const p = document.createElement('p');
+            p.textContent = `${camperName}: ${task}`;
+            document.body.appendChild(p);
+        }
+    });
 </script>
 </body>
 </html>
