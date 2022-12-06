@@ -6,18 +6,36 @@
 <body>
 <div id="todo"></div>
 <script>
-    let toDoList = ['todo1', 'todo2', 'todo3', 'todo4', 'todo5']
-    const todo = () => {
-        document.getElementById('todo').innerHTML = '<h1>' + "TO-DO:" + '</h1>'
+    let toDoListToPass = ['todo1', 'todo2', 'todo3', 'todo4', 'todo5']
+    let headerToPass = "To-Do: "
+
+    const addToDoHeader = (header) => {
+        const toDoElement = document.getElementById('todo');
+        if (!toDoElement)
+            return;
+
+        toDoElement.innerHTML = '<h1>' + header + '</h1>';
     }
 
-    const addTodo = () => {
-        todo();
-        for (let i = 0; i < toDoList.length; i++) {
-            document.getElementById('todo').innerHTML += '<p>' + toDoList[i] + '</p>'
-        }
+    const generateToDoListHTML = (toDoList) => {
+        let toDoListHTML = '';
+        for (let i = 0; i < toDoList.length; i++)
+            toDoListHTML += '<p>' + toDoList[i] + '</p>';
+
+        return toDoListHTML;
     }
-    addTodo();
+
+    const addToDoList = (toDoList) => {
+        const toDoElement = document.getElementById('todo');
+        if (!toDoElement)
+            return;
+
+        const toDoListHTML = generateToDoListHTML(toDoList);
+        toDoElement.innerHTML += toDoListHTML;
+    }
+
+    addToDoHeader(headerToPass);
+    addToDoList(toDoListToPass);
 </script>
 </body>
 </html>
